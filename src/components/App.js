@@ -1,7 +1,23 @@
-import React from "react";
 import "../styles/App.css";
+import React from "react";
 
 const App = () => {
+  const [toggle, setToggle] = React.useState(true);
+
+  function handleToggle() {
+    let div1 = document.getElementById("welcome-div");
+    let div2 = document.getElementById("about-div");
+    if (toggle) {
+      div1.style.display = "block";
+      div2.style.display = "none";
+      setToggle(false);
+    } else {
+      div1.style.display = "none";
+      div2.style.display = "block";
+      setToggle(true);
+    }
+  }
+
   return (
     <div id="main">
       <div id="welcome-div">
@@ -14,7 +30,9 @@ const App = () => {
           opportunities.
         </h1>
       </div>
-      <button id="toggle">Toggle</button>
+      <button id="toggle" onClick={handleToggle}>
+        Toggle
+      </button>
     </div>
   );
 };
