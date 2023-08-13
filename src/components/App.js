@@ -7,7 +7,6 @@ const App = () => {
   function handleToggle() {
       setToggle(!toggle);
     }
-  }
 
   return (
     <div id="main">
